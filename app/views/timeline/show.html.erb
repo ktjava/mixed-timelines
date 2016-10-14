@@ -1,0 +1,14 @@
+<h1>Minimum Timelines</h1>
+
+<h5>Received Timelines</h5>
+
+<% @timelines["posts"]["data"].each do |timeline| %>
+	<div class="message">
+		<p>ID:</p>
+		<p><%= timeline["id"] %></p>
+		<p>CREATED TIME:</p>
+		<p><%= timeline["created_time"] %></p>
+		<p>MESSAGE:</p>
+		<p><%= timeline["message"] %></p>
+	</div>
+<% end %>
