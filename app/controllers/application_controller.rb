@@ -1,4 +1,5 @@
 require 'koala'
+require 'twitter'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
@@ -8,5 +9,11 @@ class ApplicationController < ActionController::Base
   def initialize
     super
     @graph = Koala::Facebook::API.new(ACCESS_TOKEN)
+    @twitter_client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = '7z2BYFVHTQQIov2DR0stMV9oD'
+      config.consumer_secret     = 'Ri0CrgAcQ2f2EE0yzsbpQqss1Dgrcye9h1IGIkyDpRsMZkmT2w'
+      config.access_token        = '787001253163257856-XdmB6cfUykUlDuD7Tvk7qsAyGFhT8RT'
+      config.access_token_secret = 'LMMvjEnXSdSRFLyfPdABDUkOQNa5OgAryTF1hYIeLCjkH'
+    end
   end
 end
